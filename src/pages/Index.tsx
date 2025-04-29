@@ -5,6 +5,7 @@ import Sidebar from '@/components/Sidebar';
 import Hero from '@/components/Hero';
 import ProjectCard from '@/components/ProjectCard';
 import ProcessTimeline from '@/components/ProcessTimeline';
+import ExperiencesSection from '@/components/ExperiencesSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import { cn } from '@/lib/utils';
@@ -132,6 +133,7 @@ const Index: React.FC = () => {
         </section>
         
         <ProcessTimeline />
+        <ExperiencesSection />
         <ContactSection />
         <Footer />
       </main>
