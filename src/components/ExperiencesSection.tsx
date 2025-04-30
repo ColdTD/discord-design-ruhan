@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,22 +6,10 @@ import { BriefcaseBusiness, GraduationCap, BookOpen } from "lucide-react";
 // Dados de experiência profissional
 const experiences = [
   {
-    role: "UX Designer Senior",
-    company: "TechSolutions Inc.",
-    period: "2021 - Presente",
-    description: "Lidero projetos de redesign de produtos digitais com foco em melhorar métricas de engajamento e retenção. Coordeno pesquisas com usuários e workshops de ideação com stakeholders."
-  },
-  {
-    role: "Product Designer",
-    company: "InnovateUX",
-    period: "2018 - 2021",
-    description: "Responsável pelo design de interfaces para aplicações móveis e web, conduzindo pesquisas de usuário e criando protótipos interativos. Implementei uma metodologia de design system que reduziu o tempo de desenvolvimento em 30%."
-  },
-  {
-    role: "UI/UX Designer Jr.",
-    company: "Digital Creative Agency",
-    period: "2016 - 2018",
-    description: "Colaborei com equipes de desenvolvimento e marketing na criação de interfaces para websites e aplicativos. Contribuí para a criação de guias de estilo e componentes reutilizáveis."
+    role: "Estágio em TI",
+    company: "Prefeitura de Peruíbe",
+    period: "2021 - 2024",
+    description: "Suporte de TI para todos setores públicos (remoto e presencial), redes, auxiliar adiministrativo, treinamento de funcionários públicos para sistemas, controle de estoque, manutenção de computadores, desenvolvimento UX/UI, prototipação, desenvolvimento web e desenvolvimento de software."
   }
 ];
 
