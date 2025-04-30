@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -16,16 +17,16 @@ const experiences = [
 // Dados de formação
 const education = [
   {
-    degree: "Pós-graduação em UX Design",
-    institution: "Digital Innovation Institute",
-    period: "2019 - 2020",
-    description: "Especialização em métodos avançados de pesquisa de usuário, design thinking e prototipagem de alta fidelidade."
+    degree: "Bacharelado em Tecnologia da Informação",
+    institution: "Univesp",
+    period: "2022 - atual",
+    description: "Formação tecnológica para o desenvolvimento, implementação, gestão e uso de sistemas de informação e tecnologia."
   },
   {
-    degree: "Bacharelado em Design Digital",
-    institution: "Universidade Federal de Design",
-    period: "2012 - 2016",
-    description: "Formação em design de interfaces, experiência do usuário, e princípios fundamentais de design com foco em tecnologias digitais."
+    degree: "Análise e Desenvolvimento de Sistemas",
+    institution: "Fatec Santos",
+    period: "2019 - 2022",
+    description: "Formação tecnológica para projetar, desenvolver, implementar e manter sistemas de software e computacionais."
   }
 ];
 
