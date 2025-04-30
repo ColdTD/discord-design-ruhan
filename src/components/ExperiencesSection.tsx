@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -33,28 +32,22 @@ const education = [
 // Dados de cursos e certificações
 const courses = [
   {
-    title: "Design Systems Masterclass",
-    institution: "UX Academy",
+    title: "Google - UX Design",
+    institution: "Google",
+    year: "2023",
+    description: "UX Design, Prototipagem, Figma, Adobe XD, Personas, Wireframe, Pesquisa de UX, Mapa de usuário, Empatia com o usuário, Mockup, Estudo de caso, Pesquisa de mercado, Design thinking e Teste de usabilidade."
+  },
+  {
+    title: "Ação social - manutenção de computadores",
+    institution: "Ação Social",
     year: "2022",
-    description: "Curso intensivo sobre criação e implementação de design systems escaláveis para grandes organizações."
+    description: "Manutenção de computadores e Engenharia computacional básica."
   },
   {
-    title: "Certificação em Acessibilidade Digital",
-    institution: "A11Y Institute",
+    title: "Ação social - informática básica",
+    institution: "Ação Social",
     year: "2021",
-    description: "Aprofundamento em práticas de design inclusivo e WCAG 2.1 para criar produtos digitais acessíveis para todos os usuários."
-  },
-  {
-    title: "Prototyping Avançado com Figma",
-    institution: "Design Tools Pro",
-    year: "2020",
-    description: "Técnicas avançadas de prototipagem, animação e criação de componentes interativos no Figma."
-  },
-  {
-    title: "User Research Methods",
-    institution: "Nielsen Norman Group",
-    year: "2019",
-    description: "Metodologias qualitativas e quantitativas para pesquisa de usuário e análise de dados comportamentais."
+    description: "Sistemas operacionais, Pacote office e Navegadores."
   }
 ];
 
