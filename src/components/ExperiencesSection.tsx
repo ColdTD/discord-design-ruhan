@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -32,19 +33,19 @@ const education = [
 // Dados de cursos e certificações
 const courses = [
   {
-    title: "Google - UX Design",
+    title: "UX Design",
     institution: "Google",
     year: "2023",
     description: "UX Design, Prototipagem, Figma, Adobe XD, Personas, Wireframe, Pesquisa de UX, Mapa de usuário, Empatia com o usuário, Mockup, Estudo de caso, Pesquisa de mercado, Design thinking e Teste de usabilidade."
   },
   {
-    title: "Ação social - manutenção de computadores",
+    title: "Manutenção de computadores",
     institution: "Ação Social",
     year: "2022",
     description: "Manutenção de computadores e Engenharia computacional básica."
   },
   {
-    title: "Ação social - informática básica",
+    title: "Informática básica",
     institution: "Ação Social",
     year: "2021",
     description: "Sistemas operacionais, Pacote office e Navegadores."
