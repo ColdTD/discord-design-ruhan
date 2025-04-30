@@ -132,8 +132,8 @@ const Index: React.FC = () => {
           </div>
         </section>
         
-        <ProcessTimeline />
         <ExperiencesSection />
+        <ProcessTimeline />
         <ContactSection />
         <Footer />
       </main>

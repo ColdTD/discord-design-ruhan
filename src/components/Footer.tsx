@@ -22,12 +22,6 @@ const Footer: React.FC = () => {
               <a href="#" className="text-muted-foreground hover:text-discord-blurple transition-colors">
                 LinkedIn
               </a>
-              <a href="#" className="text-muted-foreground hover:text-discord-blurple transition-colors">
-                Behance
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-discord-blurple transition-colors">
-                Dribbble
-              </a>
             </div>
             <p className="text-xs text-muted-foreground">
               &copy; {year} Ruhan Davidson. Todos os direitos reservados.
