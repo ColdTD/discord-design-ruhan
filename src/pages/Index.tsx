@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
@@ -68,7 +69,7 @@ const Index: React.FC = () => {
           <div className="mb-12">
             <h2 className="text-3xl font-bold mb-4">Projetos em Destaque</h2>
             <p className="text-muted-foreground max-w-2xl">
-              Uma seleção de alguns dos meus projetos
+              Uma seleção de alguns dos meus projetos.
             </p>
           </div>
           
