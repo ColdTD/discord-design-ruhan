@@ -31,12 +31,6 @@ const Navbar: React.FC<NavbarProps> = ({ isSidebarOpen, toggleSidebar }) => {
           <NavLink href="#process">Processo</NavLink>
           <NavLink href="#about">Sobre</NavLink>
           <NavLink href="#contact">Contato</NavLink>
-          <a 
-            href="mailto:RuhanDavidson@gmail.com" 
-            className="discord-button"
-          >
-            Vamos Conversar
-          </a>
         </div>
       </div>
     </nav>
