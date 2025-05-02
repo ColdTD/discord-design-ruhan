@@ -1,7 +1,8 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Mail, Linkedin } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 const ContactSection: React.FC = () => {
   const { toast } = useToast();
@@ -11,6 +12,7 @@ const ContactSection: React.FC = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -33,25 +35,49 @@ const ContactSection: React.FC = () => {
       return;
     }
     
-    // Simulando envio do formulário
+    // Enviando o email com EmailJS
     setIsSubmitting(true);
     
-    // Simular um atraso na resposta (como se estivesse enviando para um servidor)
-    setTimeout(() => {
-      toast({
-        title: "Sucesso!",
-        description: "Sua mensagem foi enviada. Entraremos em contato em breve!",
+    // Substitua estes valores pelos seus IDs do EmailJS
+    // Você precisará criar uma conta em https://www.emailjs.com/ 
+    // e configurar um serviço de email e um template
+    const serviceId = 'YOUR_SERVICE_ID'; // Exemplo: 'service_abc123'
+    const templateId = 'YOUR_TEMPLATE_ID'; // Exemplo: 'template_xyz789'
+    const publicKey = 'YOUR_PUBLIC_KEY'; // Exemplo: 'user_abc123xyz789'
+    
+    // Os parâmetros enviados para o template
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message
+    };
+
+    emailjs.send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        console.log('Email enviado!', response.status, response.text);
+        toast({
+          title: "Sucesso!",
+          description: "Sua mensagem foi enviada. Entraremos em contato em breve!",
+        });
+        
+        // Limpar o formulário após envio
+        setFormData({
+          name: '',
+          email: '',
+          message: ''
+        });
+      })
+      .catch((err) => {
+        console.error('Erro ao enviar email:', err);
+        toast({
+          title: "Erro",
+          description: "Houve um problema ao enviar sua mensagem. Por favor, tente novamente.",
+          variant: "destructive"
+        });
+      })
+      .finally(() => {
+        setIsSubmitting(false);
       });
-      
-      // Limpar o formulário após envio
-      setFormData({
-        name: '',
-        email: '',
-        message: ''
-      });
-      
-      setIsSubmitting(false);
-    }, 1500);
   };
 
   return (
@@ -92,7 +118,7 @@ const ContactSection: React.FC = () => {
         </div>
         
         <div className="mt-12">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block mb-2 text-sm font-medium">Nome</label>
