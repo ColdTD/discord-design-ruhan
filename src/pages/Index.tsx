@@ -9,6 +9,7 @@ import ExperiencesSection from '@/components/ExperiencesSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import { cn } from '@/lib/utils';
+import { Toaster } from '@/components/ui/toaster';
 
 // Sample project data
 const projects = [
@@ -61,6 +62,7 @@ const Index: React.FC = () => {
     <div className="bg-background min-h-screen">
       <Navbar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} />
+      <Toaster />
       
       <main className={cn("transition-all duration-300", isSidebarOpen ? "lg:ml-64" : "lg:ml-20")}>
         <Hero />

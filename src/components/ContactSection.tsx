@@ -1,8 +1,59 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Linkedin } from 'lucide-react';
+import { useToast } from "@/hooks/use-toast";
 
 const ContactSection: React.FC = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Validação básica
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Atenção",
+        description: "Por favor, preencha todos os campos.",
+        variant: "destructive"
+      });
+      return;
+    }
+    
+    // Simulando envio do formulário
+    setIsSubmitting(true);
+    
+    // Simular um atraso na resposta (como se estivesse enviando para um servidor)
+    setTimeout(() => {
+      toast({
+        title: "Sucesso!",
+        description: "Sua mensagem foi enviada. Entraremos em contato em breve!",
+      });
+      
+      // Limpar o formulário após envio
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+      
+      setIsSubmitting(false);
+    }, 1500);
+  };
+
   return (
     <section id="contact" className="py-20 container">
       <div className="discord-card p-8 max-w-4xl mx-auto">
@@ -41,13 +92,15 @@ const ContactSection: React.FC = () => {
         </div>
         
         <div className="mt-12">
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="name" className="block mb-2 text-sm font-medium">Nome</label>
                 <input 
                   type="text" 
                   id="name" 
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 bg-discord-dark rounded-md border border-border focus:outline-none focus:ring-2 focus:ring-discord-blurple/50 focus:border-discord-blurple transition-all"
                   placeholder="Seu nome"
                 />
@@ -57,6 +110,8 @@ const ContactSection: React.FC = () => {
                 <input 
                   type="email" 
                   id="email" 
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full px-4 py-3 bg-discord-dark rounded-md border border-border focus:outline-none focus:ring-2 focus:ring-discord-blurple/50 focus:border-discord-blurple transition-all"
                   placeholder="seu.email@example.com"
                 />
@@ -68,14 +123,20 @@ const ContactSection: React.FC = () => {
               <textarea 
                 id="message" 
                 rows={5} 
+                value={formData.message}
+                onChange={handleChange}
                 className="w-full px-4 py-3 bg-discord-dark rounded-md border border-border focus:outline-none focus:ring-2 focus:ring-discord-blurple/50 focus:border-discord-blurple transition-all"
                 placeholder="Me conte sobre seu projeto..."
               ></textarea>
             </div>
             
             <div className="text-center">
-              <button type="submit" className="discord-button px-8 py-3">
-                Enviar Mensagem
+              <button 
+                type="submit" 
+                className="discord-button px-8 py-3"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
               </button>
             </div>
           </form>
