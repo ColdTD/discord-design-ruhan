@@ -14,13 +14,13 @@ import { Toaster } from '@/components/ui/toaster';
 // Sample project data
 const projects = [
   {
-    title: "Redesign de App Financeiro",
-    description: "Redesenho completo da experiência do usuário para um aplicativo de gestão financeira, focando em clareza visual e facilidade de uso.",
-    tags: ["UX Design", "UI Design", "Pesquisa"],
-    imageUrl: "https://source.unsplash.com/random/600x400/?finance,app",
-    figmaUrl: "https://figma.com/file/example1",
-    presentationUrl: "https://slides.com/example1",
-    documentationUrl: "https://docs.google.com/document/example1",
+    title: "Conceito de Página para o Switch 2",
+    description: "Testando conceitos de temas para uma página focada no Switch 2.",
+    tags: ["UX Design", "UI Design", "Conceito", "Jogos"],
+    imageUrl: "/lovable-uploads/9af65a33-8d1d-4b66-98ba-4da6d383df4b.png",
+    figmaUrl: "https://www.figma.com/design/zDQGRrNyyFk4gl7FofGFlb/Untitled?node-id=0-1&t=OF8fxH6udJxJHkBV-1",
+    presentationUrl: "https://www.figma.com/proto/zDQGRrNyyFk4gl7FofGFlb/Untitled?node-id=4-552&p=f&t=WldSX769t643I4FE-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A552",
+    documentationUrl: "https://www.figma.com/design/zDQGRrNyyFk4gl7FofGFlb/Untitled?node-id=0-1&t=OF8fxH6udJxJHkBV-1",
   },
   {
     title: "Plataforma de Educação Online",
