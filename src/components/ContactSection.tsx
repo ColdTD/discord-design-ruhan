@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { Mail, Linkedin, AlertCircle } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
@@ -18,7 +17,7 @@ const ContactSection: React.FC = () => {
   
   // EmailJS configuration com as credenciais fornecidas
   const [emailJSConfig, setEmailJSConfig] = useState({
-    serviceId: 'service_fs07oom',
+    serviceId: 'service_j91oagf',
     templateId: 'template_w4e94eg',
     publicKey: 'jcvdHxz4NutQY8xT4'
   });
