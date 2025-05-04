@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink, Figma, FileText, Presentation } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export interface ProjectProps {
@@ -8,18 +8,24 @@ export interface ProjectProps {
   description: string;
   tags: string[];
   imageUrl: string;
-  detailsUrl?: string;
+  figmaUrl?: string;
+  presentationUrl?: string;
+  documentationUrl?: string;
 }
 
-const ProjectCard: React.FC<ProjectProps> = ({ title, description, tags, imageUrl, detailsUrl = "#" }) => {
-  const [isHovered, setIsHovered] = useState(false);
+const ProjectCard: React.FC<ProjectProps> = ({ 
+  title, 
+  description, 
+  tags, 
+  imageUrl, 
+  figmaUrl = "#", 
+  presentationUrl = "#", 
+  documentationUrl = "#" 
+}) => {
+  const [hoveredButton, setHoveredButton] = useState<string | null>(null);
   
   return (
-    <div 
-      className="discord-card overflow-hidden group"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className="discord-card overflow-hidden group">
       <div className="relative overflow-hidden aspect-video">
         <div 
           className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
@@ -46,19 +52,64 @@ const ProjectCard: React.FC<ProjectProps> = ({ title, description, tags, imageUr
         
         <p className="text-muted-foreground text-sm">{description}</p>
         
-        <a 
-          href={detailsUrl} 
-          className={cn(
-            "inline-flex items-center gap-2 text-discord-blurple transition-all duration-300",
-            isHovered ? "opacity-100" : "opacity-70"
-          )}
-        >
-          <span>Ver detalhes</span>
-          <ArrowRight size={16} className={cn(
-            "transition-transform duration-300",
-            isHovered ? "translate-x-1" : ""
-          )} />
-        </a>
+        <div className="flex flex-wrap gap-3 mt-4">
+          <a 
+            href={figmaUrl} 
+            className={cn(
+              "inline-flex items-center gap-2 text-discord-blurple transition-all duration-300 px-3 py-2 rounded-md border border-discord-blurple/30 hover:bg-discord-blurple/10",
+              hoveredButton === "figma" ? "opacity-100" : "opacity-80"
+            )}
+            onMouseEnter={() => setHoveredButton("figma")}
+            onMouseLeave={() => setHoveredButton(null)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Figma size={16} />
+            <span>Veja no Figma</span>
+            <ExternalLink size={14} className={cn(
+              "transition-transform duration-300",
+              hoveredButton === "figma" ? "translate-x-1" : ""
+            )} />
+          </a>
+          
+          <a 
+            href={presentationUrl} 
+            className={cn(
+              "inline-flex items-center gap-2 text-discord-blurple transition-all duration-300 px-3 py-2 rounded-md border border-discord-blurple/30 hover:bg-discord-blurple/10",
+              hoveredButton === "presentation" ? "opacity-100" : "opacity-80"
+            )}
+            onMouseEnter={() => setHoveredButton("presentation")}
+            onMouseLeave={() => setHoveredButton(null)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Presentation size={16} />
+            <span>Apresentação</span>
+            <ExternalLink size={14} className={cn(
+              "transition-transform duration-300",
+              hoveredButton === "presentation" ? "translate-x-1" : ""
+            )} />
+          </a>
+          
+          <a 
+            href={documentationUrl} 
+            className={cn(
+              "inline-flex items-center gap-2 text-discord-blurple transition-all duration-300 px-3 py-2 rounded-md border border-discord-blurple/30 hover:bg-discord-blurple/10",
+              hoveredButton === "documentation" ? "opacity-100" : "opacity-80"
+            )}
+            onMouseEnter={() => setHoveredButton("documentation")}
+            onMouseLeave={() => setHoveredButton(null)}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FileText size={16} />
+            <span>Documentação</span>
+            <ExternalLink size={14} className={cn(
+              "transition-transform duration-300",
+              hoveredButton === "documentation" ? "translate-x-1" : ""
+            )} />
+          </a>
+        </div>
       </div>
     </div>
   );
