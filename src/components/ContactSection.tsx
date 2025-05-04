@@ -16,11 +16,11 @@ const ContactSection: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
   
-  // EmailJS configuration
+  // EmailJS configuration com as credenciais fornecidas
   const [emailJSConfig, setEmailJSConfig] = useState({
-    serviceId: '',
-    templateId: '',
-    publicKey: ''
+    serviceId: 'service_fs07oom',
+    templateId: 'template_w4e94eg',
+    publicKey: 'jcvdHxz4NutQY8xT4'
   });
   
   const [showConfig, setShowConfig] = useState(false);
@@ -49,17 +49,6 @@ const ContactSection: React.FC = () => {
       toast({
         title: "Atenção",
         description: "Por favor, preencha todos os campos.",
-        variant: "destructive"
-      });
-      return;
-    }
-    
-    // Validar configuração EmailJS
-    if (!emailJSConfig.serviceId || !emailJSConfig.templateId || !emailJSConfig.publicKey) {
-      setShowConfig(true);
-      toast({
-        title: "Configuração necessária",
-        description: "Por favor, configure suas credenciais do EmailJS primeiro.",
         variant: "destructive"
       });
       return;
@@ -146,89 +135,6 @@ const ContactSection: React.FC = () => {
         </div>
         
         <div className="mt-12">
-          {showConfig && (
-            <Alert variant="destructive" className="mb-6">
-              <AlertCircle className="h-4 w-4" />
-              <AlertDescription>
-                <div className="mt-2">
-                  <p className="mb-2">Para enviar emails, você precisa configurar o EmailJS:</p>
-                  <ol className="list-decimal pl-4 space-y-2">
-                    <li>Crie uma conta em <a href="https://www.emailjs.com/" target="_blank" rel="noopener noreferrer" className="underline">emailjs.com</a></li>
-                    <li>Configure um serviço de email (Gmail, Outlook, etc)</li>
-                    <li>Crie um template de email</li>
-                    <li>Copie os IDs e insira nos campos abaixo:</li>
-                  </ol>
-                  
-                  <div className="grid gap-4 mt-4">
-                    <div>
-                      <label className="block mb-1 text-sm font-medium">Service ID</label>
-                      <input 
-                        type="text"
-                        id="serviceId"
-                        value={emailJSConfig.serviceId}
-                        onChange={handleConfigChange}
-                        className="w-full px-3 py-2 bg-discord-dark rounded-md border border-destructive focus:outline-none"
-                        placeholder="Ex: service_abc123"
-                      />
-                    </div>
-                    <div>
-                      <label className="block mb-1 text-sm font-medium">Template ID</label>
-                      <input 
-                        type="text"
-                        id="templateId"
-                        value={emailJSConfig.templateId}
-                        onChange={handleConfigChange}
-                        className="w-full px-3 py-2 bg-discord-dark rounded-md border border-destructive focus:outline-none"
-                        placeholder="Ex: template_xyz789"
-                      />
-                    </div>
-                    <div>
-                      <label className="block mb-1 text-sm font-medium">Public Key</label>
-                      <input 
-                        type="text"
-                        id="publicKey"
-                        value={emailJSConfig.publicKey}
-                        onChange={handleConfigChange}
-                        className="w-full px-3 py-2 bg-discord-dark rounded-md border border-destructive focus:outline-none"
-                        placeholder="Ex: user_abc123xyz789"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="flex justify-end mt-4">
-                    <Button 
-                      variant="outline" 
-                      onClick={() => setShowConfig(false)}
-                      className="mr-2"
-                    >
-                      Cancelar
-                    </Button>
-                    <Button 
-                      variant="default" 
-                      onClick={() => {
-                        if (emailJSConfig.serviceId && emailJSConfig.templateId && emailJSConfig.publicKey) {
-                          setShowConfig(false);
-                          toast({
-                            title: "Configuração salva",
-                            description: "Suas credenciais do EmailJS foram configuradas.",
-                          });
-                        } else {
-                          toast({
-                            title: "Atenção",
-                            description: "Por favor, preencha todos os campos de configuração.",
-                            variant: "destructive"
-                          });
-                        }
-                      }}
-                    >
-                      Salvar
-                    </Button>
-                  </div>
-                </div>
-              </AlertDescription>
-            </Alert>
-          )}
-          
           <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
@@ -275,15 +181,6 @@ const ContactSection: React.FC = () => {
               >
                 {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
               </Button>
-              {!showConfig && (
-                <button 
-                  type="button" 
-                  className="text-sm text-muted-foreground hover:text-foreground underline ml-4"
-                  onClick={() => setShowConfig(true)}
-                >
-                  Configurar EmailJS
-                </button>
-              )}
             </div>
           </form>
         </div>
@@ -293,4 +190,3 @@ const ContactSection: React.FC = () => {
 };
 
 export default ContactSection;
-
