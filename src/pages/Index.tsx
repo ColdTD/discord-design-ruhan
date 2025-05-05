@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
@@ -20,16 +19,15 @@ const projects = [
     imageUrl: "/lovable-uploads/9af65a33-8d1d-4b66-98ba-4da6d383df4b.png",
     figmaUrl: "https://www.figma.com/design/zDQGRrNyyFk4gl7FofGFlb/Untitled?node-id=0-1&t=OF8fxH6udJxJHkBV-1",
     presentationUrl: "https://www.figma.com/proto/zDQGRrNyyFk4gl7FofGFlb/Untitled?node-id=4-552&p=f&t=WldSX769t643I4FE-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A552",
-    documentationUrl: "https://www.figma.com/design/zDQGRrNyyFk4gl7FofGFlb/Untitled?node-id=0-1&t=OF8fxH6udJxJHkBV-1",
+    // Removing documentationUrl as requested
   },
   {
-    title: "Plataforma de Educação Online",
-    description: "Criação de uma plataforma intuitiva para cursos online, com foco na jornada de aprendizagem e engajamento dos estudantes.",
-    tags: ["Design de Produto", "Protótipos", "Testes A/B"],
-    imageUrl: "https://source.unsplash.com/random/600x400/?education,online",
-    figmaUrl: "https://figma.com/file/example2",
-    presentationUrl: "https://slides.com/example2",
-    documentationUrl: "https://docs.google.com/document/example2",
+    title: "Conceito de Brand Board Discord",
+    description: "Testando conceitos de Brand Board para o aplicativo Discord.",
+    tags: ["UX Design", "UI Design", "Conceito", "Jogos"],
+    imageUrl: "/lovable-uploads/ef3c6919-8d1f-4f03-9ac0-e87ee3eae89e.png",
+    figmaUrl: "https://www.figma.com/design/KoMiwEEE8S6zMJSF4qzCTe/Discord-Brand-board?node-id=0-1&t=xV534pCufEcTyBRW-1",
+    // No presentationUrl or documentationUrl as requested
   },
   {
     title: "App de Bem-estar Mental",

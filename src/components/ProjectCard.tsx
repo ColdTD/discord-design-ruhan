@@ -18,9 +18,9 @@ const ProjectCard: React.FC<ProjectProps> = ({
   description, 
   tags, 
   imageUrl, 
-  figmaUrl = "#", 
-  presentationUrl = "#", 
-  documentationUrl = "#" 
+  figmaUrl, 
+  presentationUrl, 
+  documentationUrl 
 }) => {
   const [hoveredButton, setHoveredButton] = useState<string | null>(null);
   
@@ -53,62 +53,68 @@ const ProjectCard: React.FC<ProjectProps> = ({
         <p className="text-muted-foreground text-sm">{description}</p>
         
         <div className="flex flex-wrap gap-3 mt-4">
-          <a 
-            href={figmaUrl} 
-            className={cn(
-              "inline-flex items-center gap-2 text-discord-blurple transition-all duration-300 px-3 py-2 rounded-md border border-discord-blurple/30 hover:bg-discord-blurple/10",
-              hoveredButton === "figma" ? "opacity-100" : "opacity-80"
-            )}
-            onMouseEnter={() => setHoveredButton("figma")}
-            onMouseLeave={() => setHoveredButton(null)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Figma size={16} />
-            <span>Veja no Figma</span>
-            <ExternalLink size={14} className={cn(
-              "transition-transform duration-300",
-              hoveredButton === "figma" ? "translate-x-1" : ""
-            )} />
-          </a>
+          {figmaUrl && (
+            <a 
+              href={figmaUrl} 
+              className={cn(
+                "inline-flex items-center gap-2 text-discord-blurple transition-all duration-300 px-3 py-2 rounded-md border border-discord-blurple/30 hover:bg-discord-blurple/10",
+                hoveredButton === "figma" ? "opacity-100" : "opacity-80"
+              )}
+              onMouseEnter={() => setHoveredButton("figma")}
+              onMouseLeave={() => setHoveredButton(null)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Figma size={16} />
+              <span>Veja no Figma</span>
+              <ExternalLink size={14} className={cn(
+                "transition-transform duration-300",
+                hoveredButton === "figma" ? "translate-x-1" : ""
+              )} />
+            </a>
+          )}
           
-          <a 
-            href={presentationUrl} 
-            className={cn(
-              "inline-flex items-center gap-2 text-discord-blurple transition-all duration-300 px-3 py-2 rounded-md border border-discord-blurple/30 hover:bg-discord-blurple/10",
-              hoveredButton === "presentation" ? "opacity-100" : "opacity-80"
-            )}
-            onMouseEnter={() => setHoveredButton("presentation")}
-            onMouseLeave={() => setHoveredButton(null)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Presentation size={16} />
-            <span>Apresentação</span>
-            <ExternalLink size={14} className={cn(
-              "transition-transform duration-300",
-              hoveredButton === "presentation" ? "translate-x-1" : ""
-            )} />
-          </a>
+          {presentationUrl && (
+            <a 
+              href={presentationUrl} 
+              className={cn(
+                "inline-flex items-center gap-2 text-discord-blurple transition-all duration-300 px-3 py-2 rounded-md border border-discord-blurple/30 hover:bg-discord-blurple/10",
+                hoveredButton === "presentation" ? "opacity-100" : "opacity-80"
+              )}
+              onMouseEnter={() => setHoveredButton("presentation")}
+              onMouseLeave={() => setHoveredButton(null)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Presentation size={16} />
+              <span>Apresentação</span>
+              <ExternalLink size={14} className={cn(
+                "transition-transform duration-300",
+                hoveredButton === "presentation" ? "translate-x-1" : ""
+              )} />
+            </a>
+          )}
           
-          <a 
-            href={documentationUrl} 
-            className={cn(
-              "inline-flex items-center gap-2 text-discord-blurple transition-all duration-300 px-3 py-2 rounded-md border border-discord-blurple/30 hover:bg-discord-blurple/10",
-              hoveredButton === "documentation" ? "opacity-100" : "opacity-80"
-            )}
-            onMouseEnter={() => setHoveredButton("documentation")}
-            onMouseLeave={() => setHoveredButton(null)}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FileText size={16} />
-            <span>Documentação</span>
-            <ExternalLink size={14} className={cn(
-              "transition-transform duration-300",
-              hoveredButton === "documentation" ? "translate-x-1" : ""
-            )} />
-          </a>
+          {documentationUrl && (
+            <a 
+              href={documentationUrl} 
+              className={cn(
+                "inline-flex items-center gap-2 text-discord-blurple transition-all duration-300 px-3 py-2 rounded-md border border-discord-blurple/30 hover:bg-discord-blurple/10",
+                hoveredButton === "documentation" ? "opacity-100" : "opacity-80"
+              )}
+              onMouseEnter={() => setHoveredButton("documentation")}
+              onMouseLeave={() => setHoveredButton(null)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FileText size={16} />
+              <span>Documentação</span>
+              <ExternalLink size={14} className={cn(
+                "transition-transform duration-300",
+                hoveredButton === "documentation" ? "translate-x-1" : ""
+              )} />
+            </a>
+          )}
         </div>
       </div>
     </div>
