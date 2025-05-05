@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
@@ -33,7 +34,7 @@ const projects = [
     title: "Cozinha Ideal - Google UX Design",
     description: "Este projeto mostra um pouco do começo do meu aprendizado no curso de UX Design da Google.",
     tags: ["UX Design", "UI Design", "Google", "Estudo de caso"],
-    imageUrl: "https://source.unsplash.com/random/600x400/?kitchen,design",
+    imageUrl: "/lovable-uploads/11dbb27f-5a46-4d01-a096-ec474e29f999.png",
     figmaUrl: "https://www.figma.com/design/wF4rciki7vu4EbhAAj8QVo/Prot%C3%B3tipos?node-id=6-278&t=g5WiChDKfQzUOKg6-1",
     presentationUrl: "https://www.figma.com/proto/wF4rciki7vu4EbhAAj8QVo/Prot%C3%B3tipos?node-id=49-6&p=f&t=BTuxgo14fqoWR5RJ-1&scaling=scale-down&content-scaling=fixed&page-id=6%3A278&starting-point-node-id=49%3A139",
     documentationUrl: "https://docs.google.com/presentation/d/1yv5UolYlznhxeugmv8B-SUG3VmhKVLfOovOuMIZxYxA/edit#slide=id.ge4c37863e3_0_334",
