@@ -19,7 +19,7 @@ const projects = [
     imageUrl: "/lovable-uploads/9af65a33-8d1d-4b66-98ba-4da6d383df4b.png",
     figmaUrl: "https://www.figma.com/design/zDQGRrNyyFk4gl7FofGFlb/Untitled?node-id=0-1&t=OF8fxH6udJxJHkBV-1",
     presentationUrl: "https://www.figma.com/proto/zDQGRrNyyFk4gl7FofGFlb/Untitled?node-id=4-552&p=f&t=WldSX769t643I4FE-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=4%3A552",
-    // Removing documentationUrl as requested
+    // Removed documentationUrl as requested
   },
   {
     title: "Conceito de Brand Board Discord",
@@ -30,22 +30,13 @@ const projects = [
     // No presentationUrl or documentationUrl as requested
   },
   {
-    title: "App de Bem-estar Mental",
-    description: "Design de um aplicativo para meditação e controle de ansiedade, com interface calmante e fluxos de usuário simplificados.",
-    tags: ["Design Inclusivo", "UI Design", "Acessibilidade"],
-    imageUrl: "https://source.unsplash.com/random/600x400/?wellness,meditation",
-    figmaUrl: "https://figma.com/file/example3",
-    presentationUrl: "https://slides.com/example3",
-    documentationUrl: "https://docs.google.com/document/example3",
-  },
-  {
-    title: "Dashboard Corporativo",
-    description: "Visualização de dados complexos em um dashboard intuitivo para tomada de decisões empresariais.",
-    tags: ["Data Visualization", "UI Design", "UX Research"],
-    imageUrl: "https://source.unsplash.com/random/600x400/?dashboard,data",
-    figmaUrl: "https://figma.com/file/example4",
-    presentationUrl: "https://slides.com/example4",
-    documentationUrl: "https://docs.google.com/document/example4",
+    title: "Cozinha Ideal - Google UX Design",
+    description: "Este projeto mostra um pouco do começo do meu aprendizado no curso de UX Design da Google.",
+    tags: ["UX Design", "UI Design", "Google", "Estudo de caso"],
+    imageUrl: "https://source.unsplash.com/random/600x400/?kitchen,design",
+    figmaUrl: "https://www.figma.com/design/wF4rciki7vu4EbhAAj8QVo/Prot%C3%B3tipos?node-id=6-278&t=g5WiChDKfQzUOKg6-1",
+    presentationUrl: "https://www.figma.com/proto/wF4rciki7vu4EbhAAj8QVo/Prot%C3%B3tipos?node-id=49-6&p=f&t=BTuxgo14fqoWR5RJ-1&scaling=scale-down&content-scaling=fixed&page-id=6%3A278&starting-point-node-id=49%3A139",
+    documentationUrl: "https://docs.google.com/presentation/d/1yv5UolYlznhxeugmv8B-SUG3VmhKVLfOovOuMIZxYxA/edit#slide=id.ge4c37863e3_0_334",
   },
 ];
 
