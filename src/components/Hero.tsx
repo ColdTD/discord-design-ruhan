@@ -38,8 +38,12 @@ const Hero: React.FC = () => {
         
         <div className="flex-1 relative">
           <div className="discord-card p-6 max-w-md">
-            <div className="w-full aspect-square bg-discord-dark rounded-md mb-4 flex items-center justify-center">
-              <span className="text-6xl">👨‍💻</span>
+            <div className="w-full aspect-square bg-discord-dark rounded-md mb-4 flex items-center justify-center overflow-hidden">
+              <img 
+                src="/lovable-uploads/046fe4af-877e-4978-9739-a1187d8eef07.png" 
+                alt="Ruhan Davidson - UX Designer" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="flex items-start gap-4">
               <div className="w-12 h-12 rounded-full bg-discord-purple flex items-center justify-center text-xl">
