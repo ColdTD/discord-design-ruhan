@@ -99,18 +99,16 @@ const Index: React.FC = () => {
               <div className="order-2 md:order-1">
                 <h2 className="text-3xl font-bold mb-6">Sobre Mim</h2>
                 <p className="text-muted-foreground mb-4">
-                  Sou um UX Designer apaixonado por criar experiências digitais que impactam positivamente a vida das pessoas. 
-                  Com uma abordagem centrada no usuário e uma mentalidade criativa, trabalho para transformar 
-                  conceitos complexos em interfaces intuitivas e experiências envolventes.
+                  Como profissional de informática gosto de estudar novas tecnologias e solucionar problemas. Busco sempre analisar cada detalhe, ter empatia com o usuário e encontrar a melhor solução de forma personalizada para cada cliente.
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  Minha jornada no design me ensinou a valorizar tanto o processo quanto o resultado final. 
-                  Acredito que a melhor forma de resolver problemas é através de uma combinação de pesquisa 
-                  rigorosa, empatia genuína com os usuários, e uma disposição para experimentar novas abordagens.
+                  Sou um UX Designer apaixonado por criar experiências digitais que impactam positivamente a vida das pessoas. Com uma abordagem centrada no usuário e uma mentalidade criativa, trabalho para transformar conceitos complexos em interfaces intuitivas e experiências envolventes.
+                </p>
+                <p className="text-muted-foreground mb-4">
+                  Minha jornada no design me ensinou a valorizar tanto o processo quanto o resultado final. Acredito que a melhor forma de resolver problemas é através de uma combinação de pesquisa rigorosa, empatia genuína com os usuários, e uma disposição para experimentar novas abordagens.
                 </p>
                 <p className="text-muted-foreground">
-                  Quando não estou desenhando interfaces ou conduzindo pesquisas, estou sempre aprendendo sobre 
-                  novas tendências e tecnologias que possam enriquecer meu trabalho como designer.
+                  Quando não estou desenhando interfaces ou conduzindo pesquisas, estou sempre aprendendo sobre novas tendências e tecnologias que possam enriquecer meu trabalho.
                 </p>
               </div>
               
