@@ -99,7 +99,7 @@ const Index: React.FC = () => {
               <div className="order-2 md:order-1">
                 <h2 className="text-3xl font-bold mb-6">Sobre Mim</h2>
                 <p className="text-muted-foreground mb-4">
-                  Como profissional de informática gosto de estudar novas tecnologias e solucionar problemas. Busco sempre analisar cada detalhe, ter empatia com o usuário e encontrar a melhor solução de forma personalizada para cada cliente.
+                  Trabalho com TI desde 2021, gosto de estudar novas tecnologias e solucionar problemas. Busco sempre analisar cada detalhe, ter empatia com o usuário e encontrar a melhor solução de forma personalizada para cada cliente.
                 </p>
                 <p className="text-muted-foreground mb-4">
                   Sou um UX Designer apaixonado por criar experiências digitais que impactam positivamente a vida das pessoas. Com uma abordagem centrada no usuário e uma mentalidade criativa, trabalho para transformar conceitos complexos em interfaces intuitivas e experiências envolventes.
