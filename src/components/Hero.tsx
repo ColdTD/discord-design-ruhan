@@ -50,9 +50,11 @@ const Hero: React.FC = () => {
                 RD
               </div>
               <div>
-                <h3 className="font-medium">Sobre minha abordagem</h3>
+                <h3 className="font-medium">Sobre mim</h3>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Acredito que o bom design resolve problemas de forma criativa e inovadora, sempre pensando fora da caixa.
+                  Suporte de TI com mais de 4 anos de experiência e manutenção de computadores, redes, sistemas operacionais, pacote office, gestão de projetos, sistemas de chamados, help-desk, atendimento ao cliente, controle de estoque e suporte administrativo.
+                  <br />
+                  <span className="text-discord-blurple font-medium">Adicionais:</span> Front-end, UX, Marketing digital, redes sociais e edição de vídeos.
                 </p>
               </div>
             </div>
