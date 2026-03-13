@@ -7,6 +7,18 @@ import { BriefcaseBusiness, GraduationCap, BookOpen } from "lucide-react";
 // Dados de experiência profissional
 const experiences = [
   {
+    role: "IT Support",
+    company: "Autônomo",
+    period: "2021 - atual",
+    description: "IT support, help desk, atendimento ao cliente, redes, manutenção, hardware, sistemas operacionais, UX Design, edição de vídeos, marketing digital, redes sociais e gestão de projetos."
+  },
+  {
+    role: "Gerente de TI",
+    company: "Rick Imobiliária",
+    period: "2024 - 2026",
+    description: "Manutenção de computadores, gestão de rede/servidor, atendimento ao cliente, pacote office, marketing digital e edição de vídeos."
+  },
+  {
     role: "Estágio em TI",
     company: "Prefeitura de Peruíbe",
     period: "2021 - 2024",
