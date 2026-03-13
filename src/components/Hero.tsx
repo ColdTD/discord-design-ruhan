@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
             <h2 className="text-discord-blurple font-medium">Olá, eu sou</h2>
             <h1 className="text-4xl lg:text-6xl font-bold">
               Ruhan Davidson
-              <span className="block text-discord-blurple mt-2">UX Designer</span>
+              <span className="block text-discord-blurple mt-2">IT Support</span>
             </h1>
           </div>
           
