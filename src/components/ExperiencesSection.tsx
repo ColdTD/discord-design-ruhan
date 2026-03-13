@@ -70,7 +70,7 @@ const ExperiencesSection: React.FC = () => {
       <div className="mb-12">
         <h2 className="text-3xl font-bold mb-4">Experiências & Formação</h2>
         <p className="text-muted-foreground max-w-2xl">
-          Minha trajetória profissional e acadêmica que construiu minha visão sobre design e experiência do usuário.
+          Minha trajetória profissional e acadêmica.
         </p>
       </div>
 
