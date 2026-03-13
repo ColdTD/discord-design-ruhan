@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
               <div>
                 <h3 className="font-medium">Sobre mim</h3>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Suporte de TI com mais de 4 anos de experiência e manutenção de computadores, redes, sistemas operacionais, pacote office, gestão de projetos, sistemas de chamados, help-desk, atendimento ao cliente, controle de estoque e suporte administrativo.
+                  Suporte de TI com mais de 4 anos de experiência em manutenção de computadores, redes, sistemas operacionais, pacote office, gestão de projetos, sistemas de chamados, help-desk, atendimento ao cliente, controle de estoque e suporte administrativo.
                   <br />
                   <span className="text-discord-blurple font-medium">Adicionais:</span> Front-end, UX, Marketing digital, redes sociais e edição de vídeos.
                 </p>
