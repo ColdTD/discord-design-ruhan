@@ -37,7 +37,7 @@ const education = [
   {
     degree: "Bacharelado em Tecnologia da Informação",
     institution: "Univesp",
-    period: "2022 - atual",
+    period: "2022 - 2025",
     description: "Formação tecnológica para o desenvolvimento, implementação, gestão e uso de sistemas de informação e tecnologia."
   },
   {
