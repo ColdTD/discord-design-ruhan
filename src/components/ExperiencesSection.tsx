@@ -59,13 +59,13 @@ const courses = [
   {
     title: "Manutenção de computadores",
     institution: "Ação Social",
-    year: "2022",
+    year: "",
     description: "Manutenção de computadores e Engenharia computacional básica."
   },
   {
     title: "Informática básica",
     institution: "Ação Social",
-    year: "2021",
+    year: "",
     description: "Sistemas operacionais, Pacote office e Navegadores."
   }
 ];
