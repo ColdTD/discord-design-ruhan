@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
               />
             </div>
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-full bg-discord-purple flex items-center justify-center text-xl">
+            <div className="w-12 h-12 rounded-full bg-discord-purple flex items-center justify-center text-xl border-2 border-discord-blurple/40 shadow-lg aspect-square">
                 RD
               </div>
               <div>
