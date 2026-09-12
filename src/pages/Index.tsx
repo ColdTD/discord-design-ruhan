@@ -106,21 +106,49 @@ const Index: React.FC = () => {
                 </p>
               </div>
               
-              <div className="order-1 md:order-2 relative">
-                <div className="discord-card p-1 rotate-3 transform hover:rotate-0 transition-transform duration-300">
-                  <div className="aspect-square bg-discord-dark rounded-md overflow-hidden">
-                    <img 
-                      src="https://source.unsplash.com/random/600x600/?designer,portrait" 
-                      alt="Ruhan Davidson" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
+              <div className="order-1 md:order-2 relative flex items-center justify-center group">
+                {/* Background Glow */}
+                <div className="absolute w-72 h-72 bg-discord-blurple rounded-full blur-[120px] opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
                 
-                <div className="absolute -bottom-6 -right-6 discord-card p-4 -rotate-6 transform hover:rotate-0 transition-transform duration-300 max-w-[200px]">
-                  <p className="text-sm font-medium text-discord-blurple">
-                    "Bom design faz sentido. Ótimo design faz você sentir."
-                  </p>
+                {/* Neural Data Sculpture */}
+                <div className="relative w-full aspect-square max-w-[400px] flex items-center justify-center">
+                  
+                  {/* Central Core */}
+                  <div className="z-20 w-32 h-32 rounded-3xl bg-discord-dark border border-foreground/10 shadow-[0_0_50px_rgba(88,101,242,0.3)] flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                    <div className="w-12 h-12 text-discord-blurple">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                  </div>
+
+                  {/* Orbiting Node 1 */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-2xl bg-discord-lightgray/80 backdrop-blur-md border border-foreground/5 flex items-center justify-center shadow-xl group-hover:-translate-y-8 transition-transform duration-700 ease-out">
+                    <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                  </div>
+                  
+                  {/* Orbiting Node 2 */}
+                  <div className="absolute bottom-10 right-0 w-20 h-20 rounded-full bg-discord-lightgray/80 backdrop-blur-md border border-foreground/5 flex flex-col items-center justify-center shadow-xl group-hover:translate-x-6 group-hover:translate-y-4 transition-transform duration-1000 ease-out">
+                    <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-tighter">Uptime</span>
+                    <span className="text-foreground font-mono text-sm">99.9%</span>
+                  </div>
+
+                  {/* Orbiting Node 3 */}
+                  <div className="absolute bottom-10 left-0 w-24 h-12 rounded-full bg-discord-lightgray/80 backdrop-blur-md border border-foreground/5 flex items-center justify-center gap-2 shadow-xl group-hover:-translate-x-8 group-hover:translate-y-4 transition-transform duration-500 ease-out">
+                    <div className="flex space-x-0.5">
+                      <div className="w-1 h-3 bg-discord-blurple rounded-full"></div>
+                      <div className="w-1 h-5 bg-discord-blurple rounded-full"></div>
+                      <div className="w-1 h-2 bg-discord-blurple rounded-full"></div>
+                    </div>
+                    <span className="text-[10px] text-foreground font-bold">ACTIVE</span>
+                  </div>
+
+                  {/* Decorative Orbits */}
+                  <div className="absolute inset-0 border border-dashed border-foreground/10 rounded-full animate-[spin_20s_linear_infinite]"></div>
+                  <div className="absolute inset-8 border border-foreground/5 rounded-full animate-[spin_12s_linear_infinite_reverse]"></div>
+                  
+                  {/* Holographic Particles */}
+                  <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-discord-blurple rounded-full animate-ping delay-75"></div>
+                  <div className="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-foreground rounded-full animate-ping delay-300"></div>
+                  <div className="absolute top-1/2 right-0 w-1 h-1 bg-discord-blurple rounded-full animate-ping"></div>
                 </div>
               </div>
             </div>
