@@ -7,9 +7,15 @@ import { BriefcaseBusiness, GraduationCap, BookOpen } from "lucide-react";
 // Dados de experiência profissional
 const experiences = [
   {
+    role: "Técnico de Suporte",
+    company: "Quality Digital",
+    period: "2025 - atual",
+    description: "Service desk N1/N2, Troubleshooting, Active Directory, Microsoft 365/Office, Gerenciamento de Dispositivos (MDM), Documentação, atendimento ao cliente (foco em comunicação clara, análise, empatia e paciência)."
+  },
+  {
     role: "IT Support",
     company: "Autônomo",
-    period: "2021 - atual",
+    period: "2021 - 2025",
     description: "IT support, help desk, atendimento ao cliente, redes, manutenção, hardware, sistemas operacionais, UX Design, edição de vídeos, marketing digital, redes sociais e gestão de projetos."
   },
   {
