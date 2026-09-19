@@ -148,43 +148,72 @@ const Index: React.FC = () => {
                 </p>
               </div>
               
-              <div className="order-1 md:order-2 relative flex items-center justify-center group">
+              <div className="order-1 md:order-2 relative flex items-center justify-center group select-none">
                 {/* Background Glow */}
-                <div className="absolute w-72 h-72 bg-discord-blurple rounded-full blur-[120px] opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
+                <div className="absolute w-72 h-72 bg-discord-blurple rounded-full blur-[120px] opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none"></div>
                 
-                {/* Neural Data Sculpture */}
-                <div className="relative w-full aspect-square max-w-[400px] flex items-center justify-center">
-                  
-                  {/* Central Core */}
-                  <div className="z-20 w-32 h-32 rounded-3xl bg-discord-dark border border-foreground/10 shadow-[0_0_50px_rgba(88,101,242,0.3)] flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-                    <div className="w-12 h-12 text-discord-blurple">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                {/* Saturn Planet — drag to spin */}
+                <div
+                  className="relative w-full aspect-square max-w-[400px] flex items-center justify-center cursor-grab active:cursor-grabbing touch-none"
+                  style={{ perspective: "900px" }}
+                  onPointerDown={handlePlanetPointerDown}
+                  onPointerMove={handlePlanetPointerMove}
+                  onPointerUp={endPlanetDrag}
+                  onPointerLeave={endPlanetDrag}
+                >
+                  <div
+                    className="relative w-full h-full flex items-center justify-center"
+                    style={{ transform: `rotateY(${planetRotation}deg)`, transformStyle: "preserve-3d" }}
+                  >
+                    {/* Ring (behind planet) */}
+                    <div
+                      className="absolute w-[340px] h-[340px] rounded-full border-[10px] border-discord-blurple/50"
+                      style={{ transform: "rotateX(75deg)", boxShadow: "0 0 30px rgba(88,101,242,0.35), inset 0 0 20px rgba(88,101,242,0.2)" }}
+                    ></div>
+                    <div
+                      className="absolute w-[290px] h-[290px] rounded-full border-[3px] border-foreground/20"
+                      style={{ transform: "rotateX(75deg)" }}
+                    ></div>
+
+                    {/* Planet Sphere */}
+                    <div
+                      className="relative z-10 w-40 h-40 rounded-full shadow-[0_0_60px_rgba(88,101,242,0.5)]"
+                      style={{
+                        background: "radial-gradient(circle at 32% 28%, #a3b2ff 0%, #5865F2 38%, #2c3aa8 68%, #141a4a 100%)",
+                      }}
+                    >
+                      {/* Surface bands */}
+                      <div className="absolute inset-0 rounded-full overflow-hidden opacity-40">
+                        <div className="absolute top-[30%] left-0 right-0 h-[10%] bg-white/20 blur-[2px]"></div>
+                        <div className="absolute top-[52%] left-0 right-0 h-[7%] bg-indigo-300/30 blur-[2px]"></div>
+                        <div className="absolute top-[70%] left-0 right-0 h-[5%] bg-white/10 blur-[2px]"></div>
+                      </div>
+                      {/* Terminator shadow */}
+                      <div
+                        className="absolute inset-0 rounded-full"
+                        style={{ background: "linear-gradient(115deg, transparent 42%, rgba(5,8,30,0.75) 78%)" }}
+                      ></div>
                     </div>
+
+                    {/* Moon orbiting on the ring plane */}
+                    <div
+                      className="absolute w-4 h-4 rounded-full bg-foreground/90 shadow-[0_0_12px_rgba(255,255,255,0.6)]"
+                      style={{
+                        transform: `rotateX(75deg) rotate(${planetRotation * 2}deg) translateX(155px)`,
+                      }}
+                    ></div>
+                    <div
+                      className="absolute w-2.5 h-2.5 rounded-full bg-discord-blurple shadow-[0_0_10px_rgba(88,101,242,0.9)]"
+                      style={{
+                        transform: `rotateX(75deg) rotate(${-planetRotation * 1.4}deg) translateX(180px)`,
+                      }}
+                    ></div>
                   </div>
 
-                  {/* Orbiting Node 1 */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-2xl bg-discord-lightgray/80 backdrop-blur-md border border-foreground/5 flex items-center justify-center shadow-xl group-hover:-translate-y-8 transition-transform duration-700 ease-out">
-                    <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-tighter">Empatia</span>
-                  </div>
-                  
-                  {/* Orbiting Node 2 */}
-                  <div className="absolute bottom-10 right-0 w-20 h-20 rounded-full bg-discord-lightgray/80 backdrop-blur-md border border-foreground/5 flex flex-col items-center justify-center shadow-xl group-hover:translate-x-6 group-hover:translate-y-4 transition-transform duration-1000 ease-out">
-                    <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-tighter">Precisão</span>
-                  </div>
-
-                  {/* Orbiting Node 3 */}
-                  <div className="absolute bottom-10 left-0 w-24 h-12 rounded-full bg-discord-lightgray/80 backdrop-blur-md border border-foreground/5 flex items-center justify-center shadow-xl group-hover:-translate-x-8 group-hover:translate-y-4 transition-transform duration-500 ease-out">
-                    <span className="text-[10px] text-foreground uppercase font-bold tracking-tighter">Análise</span>
-                  </div>
-
-                  {/* Decorative Orbits */}
-                  <div className="absolute inset-0 border border-dashed border-foreground/10 rounded-full animate-[spin_20s_linear_infinite]"></div>
-                  <div className="absolute inset-8 border border-foreground/5 rounded-full animate-[spin_12s_linear_infinite_reverse]"></div>
-                  
                   {/* Holographic Particles */}
-                  <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-discord-blurple rounded-full animate-ping delay-75"></div>
-                  <div className="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-foreground rounded-full animate-ping delay-300"></div>
-                  <div className="absolute top-1/2 right-0 w-1 h-1 bg-discord-blurple rounded-full animate-ping"></div>
+                  <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-discord-blurple rounded-full animate-ping delay-75 pointer-events-none"></div>
+                  <div className="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-foreground rounded-full animate-ping delay-300 pointer-events-none"></div>
+                  <div className="absolute top-1/2 right-0 w-1 h-1 bg-discord-blurple rounded-full animate-ping pointer-events-none"></div>
                 </div>
               </div>
             </div>
