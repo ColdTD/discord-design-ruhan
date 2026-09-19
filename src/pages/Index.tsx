@@ -161,32 +161,31 @@ const Index: React.FC = () => {
                   onPointerUp={endPlanetDrag}
                   onPointerLeave={endPlanetDrag}
                 >
-                  <div
-                    className="relative w-full h-full flex items-center justify-center"
-                    style={{ transform: `rotateY(${planetRotation}deg)`, transformStyle: "preserve-3d" }}
-                  >
-                    {/* Ring (behind planet) */}
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    {/* Ring — back half (behind planet) */}
                     <div
-                      className="absolute w-[340px] h-[340px] rounded-full border-[10px] border-discord-blurple/50"
-                      style={{ transform: "rotateX(75deg)", boxShadow: "0 0 30px rgba(88,101,242,0.35), inset 0 0 20px rgba(88,101,242,0.2)" }}
+                      className="absolute w-[340px] h-[110px] rounded-[50%] border-[9px] border-discord-blurple/50"
+                      style={{ boxShadow: "0 0 30px rgba(88,101,242,0.35), inset 0 0 20px rgba(88,101,242,0.2)" }}
                     ></div>
-                    <div
-                      className="absolute w-[290px] h-[290px] rounded-full border-[3px] border-foreground/20"
-                      style={{ transform: "rotateX(75deg)" }}
-                    ></div>
+                    <div className="absolute w-[290px] h-[92px] rounded-[50%] border-[3px] border-foreground/20"></div>
 
-                    {/* Planet Sphere */}
+                    {/* Planet Sphere — always round, bands drift slowly */}
                     <div
-                      className="relative z-10 w-40 h-40 rounded-full shadow-[0_0_60px_rgba(88,101,242,0.5)]"
+                      className="relative z-10 w-40 h-40 rounded-full shadow-[0_0_60px_rgba(88,101,242,0.5)] overflow-hidden"
                       style={{
                         background: "radial-gradient(circle at 32% 28%, #a3b2ff 0%, #5865F2 38%, #2c3aa8 68%, #141a4a 100%)",
                       }}
                     >
-                      {/* Surface bands */}
-                      <div className="absolute inset-0 rounded-full overflow-hidden opacity-40">
-                        <div className="absolute top-[30%] left-0 right-0 h-[10%] bg-white/20 blur-[2px]"></div>
-                        <div className="absolute top-[52%] left-0 right-0 h-[7%] bg-indigo-300/30 blur-[2px]"></div>
-                        <div className="absolute top-[70%] left-0 right-0 h-[5%] bg-white/10 blur-[2px]"></div>
+                      {/* Surface bands drift with rotation */}
+                      <div
+                        className="absolute inset-[-40%] opacity-40"
+                        style={{ transform: `translateX(${-(planetRotation % 360) * 0.4}px)` }}
+                      >
+                        <div className="absolute top-[38%] left-0 right-0 h-[8%] bg-white/20 blur-[3px]"></div>
+                        <div className="absolute top-[55%] left-0 right-0 h-[6%] bg-indigo-300/30 blur-[3px]"></div>
+                        <div className="absolute top-[70%] left-0 right-0 h-[4%] bg-white/10 blur-[3px]"></div>
+                        <div className="absolute top-[38%] left-full right-[-100%] h-[8%] bg-white/20 blur-[3px]"></div>
+                        <div className="absolute top-[55%] left-full right-[-100%] h-[6%] bg-indigo-300/30 blur-[3px]"></div>
                       </div>
                       {/* Terminator shadow */}
                       <div
@@ -195,19 +194,38 @@ const Index: React.FC = () => {
                       ></div>
                     </div>
 
-                    {/* Moon orbiting on the ring plane */}
+                    {/* Ring — front half highlight (over planet) */}
                     <div
-                      className="absolute w-4 h-4 rounded-full bg-foreground/90 shadow-[0_0_12px_rgba(255,255,255,0.6)]"
-                      style={{
-                        transform: `rotateX(75deg) rotate(${planetRotation * 2}deg) translateX(155px)`,
-                      }}
+                      className="absolute z-20 w-[340px] h-[110px] rounded-[50%] border-[9px] border-transparent border-b-discord-blurple/60 pointer-events-none"
+                      style={{ clipPath: "inset(50% 0 0 0)" }}
                     ></div>
-                    <div
-                      className="absolute w-2.5 h-2.5 rounded-full bg-discord-blurple shadow-[0_0_10px_rgba(88,101,242,0.9)]"
-                      style={{
-                        transform: `rotateX(75deg) rotate(${-planetRotation * 1.4}deg) translateX(180px)`,
-                      }}
-                    ></div>
+
+                    {/* Orbiting labels on the ring */}
+                    {[
+                      { label: "Empatia", offset: 0 },
+                      { label: "Precisão", offset: 120 },
+                      { label: "Análise", offset: 240 },
+                    ].map(({ label, offset }) => {
+                      const a = ((planetRotation + offset) * Math.PI) / 180;
+                      const x = Math.cos(a) * 160;
+                      const y = Math.sin(a) * 52;
+                      const front = Math.sin(a) > 0;
+                      const depth = (Math.sin(a) + 1) / 2; // 0 back → 1 front
+                      return (
+                        <div
+                          key={label}
+                          className="absolute flex items-center gap-2 px-3 py-1.5 rounded-full bg-discord-lightgray/80 backdrop-blur-md border border-foreground/10 shadow-xl whitespace-nowrap"
+                          style={{
+                            transform: `translate(${x}px, ${y}px) scale(${0.75 + depth * 0.3})`,
+                            zIndex: front ? 30 : 5,
+                            opacity: 0.55 + depth * 0.45,
+                          }}
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-discord-blurple shadow-[0_0_8px_rgba(88,101,242,0.9)]"></span>
+                          <span className="text-[10px] text-foreground uppercase font-bold tracking-widest">{label}</span>
+                        </div>
+                      );
+                    })}
                   </div>
 
                   {/* Holographic Particles */}
