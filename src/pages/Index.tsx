@@ -122,23 +122,17 @@ const Index: React.FC = () => {
 
                   {/* Orbiting Node 1 */}
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 rounded-2xl bg-discord-lightgray/80 backdrop-blur-md border border-foreground/5 flex items-center justify-center shadow-xl group-hover:-translate-y-8 transition-transform duration-700 ease-out">
-                    <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
+                    <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-tighter">Empatia</span>
                   </div>
                   
                   {/* Orbiting Node 2 */}
                   <div className="absolute bottom-10 right-0 w-20 h-20 rounded-full bg-discord-lightgray/80 backdrop-blur-md border border-foreground/5 flex flex-col items-center justify-center shadow-xl group-hover:translate-x-6 group-hover:translate-y-4 transition-transform duration-1000 ease-out">
-                    <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-tighter">Uptime</span>
-                    <span className="text-foreground font-mono text-sm">99.9%</span>
+                    <span className="text-[10px] text-muted-foreground uppercase font-bold tracking-tighter">Precisão</span>
                   </div>
 
                   {/* Orbiting Node 3 */}
-                  <div className="absolute bottom-10 left-0 w-24 h-12 rounded-full bg-discord-lightgray/80 backdrop-blur-md border border-foreground/5 flex items-center justify-center gap-2 shadow-xl group-hover:-translate-x-8 group-hover:translate-y-4 transition-transform duration-500 ease-out">
-                    <div className="flex space-x-0.5">
-                      <div className="w-1 h-3 bg-discord-blurple rounded-full"></div>
-                      <div className="w-1 h-5 bg-discord-blurple rounded-full"></div>
-                      <div className="w-1 h-2 bg-discord-blurple rounded-full"></div>
-                    </div>
-                    <span className="text-[10px] text-foreground font-bold">ACTIVE</span>
+                  <div className="absolute bottom-10 left-0 w-24 h-12 rounded-full bg-discord-lightgray/80 backdrop-blur-md border border-foreground/5 flex items-center justify-center shadow-xl group-hover:-translate-x-8 group-hover:translate-y-4 transition-transform duration-500 ease-out">
+                    <span className="text-[10px] text-foreground uppercase font-bold tracking-tighter">Análise</span>
                   </div>
 
                   {/* Decorative Orbits */}
