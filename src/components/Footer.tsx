@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   const year = new Date().getFullYear();
   
   return (
-    <footer className="bg-discord-darker py-8 mt-12">
+    <footer className="bg-discord-darker/80 py-8 mt-12">
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
