@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
 import Hero from '@/components/Hero';
@@ -44,6 +44,48 @@ const projects = [
 const Index: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  
+  // Planet drag-to-rotate state
+  const [planetRotation, setPlanetRotation] = useState(0);
+  const dragRef = useRef({ dragging: false, startX: 0, startRotation: 0, lastX: 0, lastT: 0, velocity: 0 });
+
+  const handlePlanetPointerDown = (e: React.PointerEvent) => {
+    dragRef.current.dragging = true;
+    dragRef.current.startX = e.clientX;
+    dragRef.current.lastX = e.clientX;
+    dragRef.current.lastT = performance.now();
+    dragRef.current.startRotation = planetRotation;
+    (e.target as HTMLElement).setPointerCapture?.(e.pointerId);
+  };
+
+  const handlePlanetPointerMove = (e: React.PointerEvent) => {
+    if (!dragRef.current.dragging) return;
+    const now = performance.now();
+    const dt = Math.max(now - dragRef.current.lastT, 1);
+    dragRef.current.velocity = ((e.clientX - dragRef.current.lastX) / dt) * 16;
+    dragRef.current.lastX = e.clientX;
+    dragRef.current.lastT = now;
+    setPlanetRotation(dragRef.current.startRotation + (e.clientX - dragRef.current.startX) * 0.5);
+  };
+
+  const endPlanetDrag = () => {
+    dragRef.current.dragging = false;
+  };
+
+  // Inertia + idle auto-spin
+  useEffect(() => {
+    let raf: number;
+    const tick = () => {
+      if (!dragRef.current.dragging) {
+        dragRef.current.velocity *= 0.95;
+        const spin = 0.05 + dragRef.current.velocity * 0.5;
+        setPlanetRotation((r) => r + spin);
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, []);
   
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
