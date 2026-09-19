@@ -8,6 +8,7 @@ import ProcessTimeline from '@/components/ProcessTimeline';
 import ExperiencesSection from '@/components/ExperiencesSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import Starfield from '@/components/Starfield';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/toaster';
 
@@ -104,11 +105,12 @@ const Index: React.FC = () => {
   
   return (
     <div className="bg-background min-h-screen">
+      <Starfield />
       <Navbar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} />
       <Toaster />
       
-      <main className={cn("transition-all duration-300", isSidebarOpen ? "lg:ml-64" : "lg:ml-20")}>
+      <main className={cn("relative z-10 transition-all duration-300", isSidebarOpen ? "lg:ml-64" : "lg:ml-20")}>
         <Hero />
         
         <section id="projects" className="py-20 container">
@@ -135,7 +137,7 @@ const Index: React.FC = () => {
           </div>
         </section>
         
-        <section id="about" className="py-20 bg-discord-darker">
+        <section id="about" className="py-20 bg-discord-darker/80">
           <div className="container">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="order-2 md:order-1">
@@ -227,11 +229,6 @@ const Index: React.FC = () => {
                       );
                     })}
                   </div>
-
-                  {/* Holographic Particles */}
-                  <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-discord-blurple rounded-full animate-ping delay-75 pointer-events-none"></div>
-                  <div className="absolute bottom-1/3 right-1/4 w-1.5 h-1.5 bg-foreground rounded-full animate-ping delay-300 pointer-events-none"></div>
-                  <div className="absolute top-1/2 right-0 w-1 h-1 bg-discord-blurple rounded-full animate-ping pointer-events-none"></div>
                 </div>
               </div>
             </div>
